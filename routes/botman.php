@@ -14,4 +14,8 @@ $botman->hears('Hi', function ($bot) {
 $botman->hears('Manah manah', function ($bot) {
 	$bot->reply('Do doooo do do-do');
 });
+$botman->hears('Who am I?', function ($bot) {
+	$user = $bot->getUser();
+	$bot->reply( 'Why, you seem to be ' . $user->getFirstName() . ' ' . $user->getLastName() );
+} );
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
